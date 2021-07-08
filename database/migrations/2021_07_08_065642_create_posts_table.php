@@ -23,8 +23,10 @@ class CreatePostsTable extends Migration
             $table->bigInteger('category_id')->nullable()->unsigned();
             $table->bigInteger('user_id')->nullable()->unsigned();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('setnull');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('setnull');
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+        
         });
     }
 
