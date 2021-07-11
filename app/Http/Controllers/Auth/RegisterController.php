@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -69,4 +70,28 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+        ?: redirect($this->redirectPath());
+
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $user->api_token = Str::random(60);
+
+        $user->save();
+
+        return response()->json(['user' => $user->toArray()], 201);
+    }
+
+
 }
