@@ -6,15 +6,47 @@
 
     <title>React Laravel Blog | Admin</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/bower_components/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/dist/css/AdminLTE.min.css">
+
+    <!-- Theme skin -->
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/dist/css/skins/skin-green.css">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{ asset('assets/admin') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body>
+<body class="hold-transition skin-green sidebar-mini">
 
-<div id="app"></div>
+    <div id="app"></div>
 
-<script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+    <!-- Main app script -->
+    <script src="{{ asset('js/admin.js') }}" type="text/javascript"></script>
+
+    <!-- jQuery 3 -->
+    <script src="{{ asset('assets/admin') }}/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{{ asset('assets/admin') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="{{ asset('assets/admin') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('assets/admin') }}/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('assets/admin') }}/dist/js/demo.js"></script>
 </body>
 </html>
