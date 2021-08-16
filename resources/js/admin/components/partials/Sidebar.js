@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 
 const Sidebar = (props) => {
 
-    return (
+    return props.location.pathname != '/login'?(
         <aside className="main-sidebar">
             <section className="sidebar">
                 <div className="user-panel">
@@ -12,7 +12,7 @@ const Sidebar = (props) => {
                         <img src={process.env.MIX_APP_URL + 'assets/admin/dist/img/avatar04.png'} className="img-circle" alt="User Image" />
                     </div>
                     <div className="pull-left info">
-                        <p>Admin</p>
+                        <p>{localStorage.getItem("user.name")}</p>
                     </div>
                 </div>
                 <ul className="sidebar-menu" data-widget="tree">
@@ -50,7 +50,7 @@ const Sidebar = (props) => {
                 </ul>
             </section>
         </aside>
-    );
+    ):null;
 };
 
 export default withRouter(Sidebar);
